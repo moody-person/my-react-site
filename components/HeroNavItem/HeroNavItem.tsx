@@ -3,14 +3,14 @@ import { Nav } from '../../features/navigation';
 import { ZoomWord } from '../ZoomWord/ZoomWord';
 import style from './MainLayout.module.css';
 
-type HeroNavItemProps = Nav;
+type HeroNavItemProps = { nav:Nav };
 
-export const HeroNavItem: FC<HeroNavItemProps> = ({ title, url }) => {
+export const HeroNavItem: FC<HeroNavItemProps> = ({ nav }) => {
     return (
         <li className={style.HeroNavItem}>
             <div>
-                <ZoomWord title={title}>
-                    <a href={url}>{title}</a>
+                <ZoomWord name={nav.name}>
+                    <a href={nav.url}>{nav.name}</a>
                 </ZoomWord>
             </div>
         </li>

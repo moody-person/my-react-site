@@ -3,13 +3,13 @@ import { Nav } from '../../features/navigation';
 import { LinkTheme, MyLink } from '../MyLink/MyLink';
 import style from './MainLayout.module.css';
 
-type NavItemProps = Nav;
+type NavItemProps = { nav: Nav };
 
-export const NavItem: FC<NavItemProps> = ({ title, url }) => {
+export const NavItem: FC<NavItemProps> = ({ nav }) => {
     return (
         <li className={style.NavItem}>
-            <MyLink href={url} theme={LinkTheme.BIG}>
-                { title }
+            <MyLink href={nav.url} theme={LinkTheme.BIG}>
+                { nav.name }
             </MyLink>
         </li>
     );

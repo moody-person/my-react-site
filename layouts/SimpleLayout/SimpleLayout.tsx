@@ -1,8 +1,8 @@
-import React, { FC, ReactElement } from 'react'
+import React, { FC, ReactNode } from 'react'
 import style from './SimpleLayout.module.css';
 
 type SimpleLayoutProps = {
-    children: ReactElement;
+    children: ReactNode;
 }
 
 export const SimpleLayout: FC<SimpleLayoutProps> = ({children}) => {

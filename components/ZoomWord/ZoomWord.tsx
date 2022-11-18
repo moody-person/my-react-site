@@ -3,15 +3,15 @@ import { Nav } from '../../features/navigation';
 import { range } from '../../utils/utils';
 import style from './MainLayout.module.css';
 
-type ZoomWordProps = Pick<Nav, "title"> & { children: ReactElement };
+type ZoomWordProps = Pick<Nav, "name"> & { children: ReactElement };
 
-export const ZoomWord: FC<ZoomWordProps> = ({ title, children }) => {
+export const ZoomWord: FC<ZoomWordProps> = ({ name, children }) => {
     return (
         <div className={style.ZoomWord}>
             <div className={style.ZoomWordList}>
                 {range(0, 6).map((i) => (
                     <span key={i} className={style.ZoomWordListText}>
-                        {title}
+                        {name}
                     </span>
                 ))}
             </div>

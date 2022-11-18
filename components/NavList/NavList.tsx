@@ -18,13 +18,13 @@ export const NavList: FC<NavListProps> = ({ navList, theme}) => {
     if (theme === NavTheme.HERO) {
         return (
             <ul className={style.NavList}>
-                {navList.map((nav) => <HeroNavItem key={nav.title} title={nav.title} url={nav.url} /> )}
+                {navList.map((nav) => <HeroNavItem key={nav.name} nav={nav} /> )}
             </ul>
           )
     } else if (theme === NavTheme.MAIN) {
         return (
             <ul className={style.NavList}>
-                {navList.map((nav) => <NavItem key={nav.title} url={nav.url} title={nav.title} />)}
+                {navList.map((nav) => <NavItem key={nav.name} nav={nav} />)}
             </ul>
           )
     }
