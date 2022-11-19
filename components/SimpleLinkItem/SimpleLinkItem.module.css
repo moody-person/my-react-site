@@ -1,0 +1,5 @@
+
+
+.SimpleLinkListItem + .SimpleLinkListItem {
+    margin-left: 10px;
+}

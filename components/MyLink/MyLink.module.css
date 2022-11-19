@@ -1,0 +1,18 @@
+.MyLinkIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text);
+}
+
+.MyLinkIcon:hover {
+    color: var(--color-extra);
+}
+
+.MyLinkSimple {
+    color: var(--color-text);
+}
+
+.MyLinkSimple:hover {
+    color: var(--color-extra);
+}

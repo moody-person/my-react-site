@@ -1,7 +1,7 @@
 import React, { FC, ReactElement } from 'react';
 import { Nav } from '../../features/navigation';
 import { range } from '../../utils/utils';
-import style from './MainLayout.module.css';
+import style from './ZoomWord.module.css';
 
 type ZoomWordProps = Pick<Nav, "name"> & { children: ReactElement };
 

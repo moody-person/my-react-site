@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import { UserLink } from '../../data/about';
 import { SimpleLinkItem } from '../SimpleLinkItem/SimpleLinkItem';
-import style from './MainLayout.module.css';
+import style from './LinkList.module.css';
 
 export enum LinkListTheme {
     HERO = 'hero',
@@ -16,7 +16,7 @@ type LinkListProps = {
 export const LinkList: FC<LinkListProps> = ({ linkList, theme}) => {
     if (theme === LinkListTheme.HERO) {
         return (
-            <ul className={style.LinkList}>
+            <ul className={`${style.LinkList} ${style.LinkListHero}`}>
                 {linkList.map((link) => <SimpleLinkItem key={link.url} link={link} /> )}
             </ul>
           )

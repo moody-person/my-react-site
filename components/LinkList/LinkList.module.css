@@ -1,0 +1,9 @@
+.LinkList {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.LinkListHero {
+    margin-top: 5px;
+}

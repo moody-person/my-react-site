@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React, { FC, ReactNode } from 'react';
-import style from './MainLayout.module.css';
+import style from './MyLink.module.css';
 
 export enum LinkTheme {
     BIG = 'big',
@@ -19,25 +19,25 @@ export const MyLink: FC<MyLinkProps> = ({ href, theme, children }) => {
     if (theme === LinkTheme.BIG) {
         return (
             <Link href={href}>
-                <a className={style.MyLinkBig}>
+                <span className={style.MyLinkBig}>
                     {children}
-                </a>
+                </span>
             </Link>
         );
     } else if (theme == LinkTheme.SIMPLE) {
         return (
             <Link href={href}>
-                <a className={style.MyLinkSimple}>
+                <span className={style.MyLinkSimple}>
                     {children}
-                </a>
+                </span>
             </Link>
         )
     } else if (theme === LinkTheme.ICON) {
         return (
             <Link href={href}>
-                <a className={style.MyLinkIcon}>
+                <span className={style.MyLinkIcon}>
                     {children}
-                </a>
+                </span>
             </Link>
         )
     }

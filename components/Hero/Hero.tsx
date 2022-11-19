@@ -20,7 +20,9 @@ export const Hero: FC<HeroProps> = ({ userLinks }) => {
                 <p className={style.HeroDescription}>{i18n.t('admin.description')}</p>
                 <LinkList linkList={userLinks} theme={LinkListTheme.HERO} />
             </div>
-            <NavList navList={navList} theme={NavTheme.HERO} />
+            <div className={style.HeroNavList}>
+                <NavList navList={navList} theme={NavTheme.HERO} />
+            </div>
         </div>
     );
 };

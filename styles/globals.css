@@ -10,12 +10,17 @@ body {
   height: 100%;
 }
 
+#__next {
+  height: 100%;
+}
+
 .default-layout {
     display: flex;
     flex-direction: column;
     font-family: var(--sans-serif);
     color: var(--color-text);
     background-color: var(--color-main);  
+    height: 100%;
 }
 
 .visuallyhidden {
@@ -59,7 +64,6 @@ main {
     max-width: var(--max-main-width);
     width: 100%;
     flex: 1;
-    @include mixins.content-padding();
 }
 
 button {

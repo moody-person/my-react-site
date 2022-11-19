@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Nav } from '../../features/navigation';
 import { LinkTheme, MyLink } from '../MyLink/MyLink';
-import style from './MainLayout.module.css';
+import style from './NavItem.module.css';
 
 type NavItemProps = { nav: Nav };
 

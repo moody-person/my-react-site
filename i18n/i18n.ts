@@ -1,5 +1,6 @@
 import rosetta from 'rosetta';
 import { aboutI18N } from '../data/about';
+import { adminI18N } from '../data/admin';
  
 // TODO provide data
 // about - about me page
@@ -10,6 +11,9 @@ import { aboutI18N } from '../data/about';
 // articles - text in articles
 export const i18n = rosetta({
     ru: {
+        admin: {
+            ...adminI18N['ru']
+        },
         about: {
             ...aboutI18N['ru']
         }

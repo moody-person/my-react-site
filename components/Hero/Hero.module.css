@@ -1,0 +1,28 @@
+.Hero {
+    display: grid;
+    grid-template-areas: 'meta' 'navlist';
+
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    height: 100%;
+}
+
+.HeroMeta {
+    grid-area: meta;
+}
+
+.HeroNavList {
+    grid-area: navlist;
+}
+
+.HeroDescription {
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+@media (min-width: 400px) {
+    .Hero {
+        grid-template-areas: 'meta navlist';
+    }
+}
