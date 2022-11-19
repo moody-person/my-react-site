@@ -2,7 +2,8 @@ import React, { FC } from 'react'
 import { Nav } from '../../features/navigation';
 import { HeroNavItem } from '../HeroNavItem/HeroNavItem';
 import { NavItem } from '../NavItem/NavItem';
-import style from './MainLayout.module.css';
+
+import style from './NavList.module.css';
 
 export enum NavTheme {
     HERO = 'hero',

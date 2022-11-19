@@ -11,6 +11,7 @@ export enum LinkTheme {
 type MyLinkProps = {
     theme: LinkTheme;
     href: string;
+    icon?: ReactNode;
     children: ReactNode;
 };
 
