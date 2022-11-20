@@ -1,3 +1,5 @@
 .Header {
-    margin: 16px 0;
+    max-width: var(--max-header-width);
+    margin: 16px auto;
+    width: 100%;
 }

@@ -9,16 +9,17 @@ type FooterProps = {};
 
 // TODO: do not forget to update copyright year in 2023
 export const Footer: FC<FooterProps> = ({}) => {
+    const currentYear = (new Date).getFullYear();
     return (
         <footer className={style.Footer}>
             <div className={style.FooterTech}>
-                {i18n.t('footer.madeWith')}
+                <span>{i18n.t('footer.madeWith')}</span>{' '}
                 <MyLink theme={LinkTheme.SIMPLE} href="https://nextjs.org/">
                     next.js
                 </MyLink>
             </div>
             <div className={style.FooterCopyRight}>
-                © 2022 {i18n.t('author.name')}
+                © 2021 - {currentYear} {i18n.t('admin.name')}
             </div>
             <div className={style.FooterSources}>
                 <span>{i18n.t('footer.sources')}</span>
@@ -26,7 +27,7 @@ export const Footer: FC<FooterProps> = ({}) => {
                     theme={LinkTheme.ICON}
                     href="https://github.com/moody-person/my-site"
                 >
-                    <IconBrandGithub size={16} color="black" />
+                    <IconBrandGithub size={22} color="currentColor" />
                 </MyLink>
             </div>
         </footer>

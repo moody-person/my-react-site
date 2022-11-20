@@ -1,0 +1,21 @@
+.Footer {
+    max-width: var(--max-footer-width);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 16px 0;
+    flex: 0 0;
+}
+
+.FooterTech {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.FooterSources {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

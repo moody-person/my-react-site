@@ -129,3 +129,52 @@ time {
 .about-text p {
   margin-top: 5px;
 }
+
+
+.c-lang--php {
+  background: #8892BF;
+  color: white;
+}
+.c-lang--js {
+  background: #f7df1e;
+}
+.c-lang--ts {
+  background: #3178c6;
+  color: white;
+}
+.c-lang--html {
+  background: #dd4a24;
+  color: white;
+}
+.c-lang--css {
+  background: #196fb4;
+  color: white;
+}
+.c-lang--vue {
+  background: #41b883;
+  color: white;
+}
+.c-lang--svelte {
+  background: #f73c00;
+  color: white;
+}
+.c-lang--react {
+  background: #61dafb;
+  color: black;
+}
+
+.c-job--vk {
+  color: #0077ff;
+}
+.c-job--koshelek {
+  color: #0251f8;
+}
+.c-job--rozario {
+  color: #e71f75;
+}
+.c-job--freelance {
+  color: gray;
+}
+.c-job--seventest {
+  color: #ab250c;
+}

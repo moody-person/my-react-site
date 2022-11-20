@@ -14,7 +14,7 @@ type MyLinkProps = {
     href: string;
     icon?: ReactNode;
     children: ReactNode;
-    isActive: boolean;
+    isActive?: boolean;
 };
 
 export const MyLink: FC<MyLinkProps> = ({ href, theme, children, isActive = false }) => {

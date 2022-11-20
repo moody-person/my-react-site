@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { Job } from '../../data/cv';
 import { i18n } from '../../i18n/i18n';
+import { CVDate } from '../CVDate/CVDate';
 
 import style from './Job.module.css';
 
@@ -11,12 +12,15 @@ type JobProps = {
 export const JobComponent: FC<JobProps> = ({ job }) => {
     return (
         <li>
-            <h3>{i18n.t(job.company)}</h3>
-            <div>
+            <h3 className={job.class}>{job.company}</h3>
+            <CVDate start={job.start} end={job.end} />
+            <ul className={style.JobDescriptionList}>
                 {job.description?.map((descriptionItem, i) => (
-                    <p key={i}>{i18n.t(descriptionItem.textLang)}</p>
+                    <li key={i} className={style.JobDescriptionListItem}>
+                        {i18n.t(descriptionItem.textLang)}
+                    </li>
                 ))}
-            </div>
+            </ul>
         </li>
     );
 };

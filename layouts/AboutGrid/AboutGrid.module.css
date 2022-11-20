@@ -1,8 +1,11 @@
 .AboutGrid {
+    width: 100%;
     display: grid;
+    margin-top: 10px;
+    gap: 10px;
     grid-template-areas: 
-        "text photo"
-        "links machine";
+        "text photo machine"
+        "links links machine";
 }
 
 .AboutGridText {

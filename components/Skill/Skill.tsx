@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { Skill } from '../../data/cv';
 import { i18n } from '../../i18n/i18n';
+import { Chip } from '../Chip/Chip';
 
 import style from './Skill.module.css';
 
@@ -12,15 +13,16 @@ type SkillProps = {
 export const SkillComponent: FC<SkillProps> = ({ skill, tag }) => {
     const CustomTag = tag ?? 'li';
     return (
-        <CustomTag key={skill.sectionLang}>
+        <CustomTag className={style.Skill} key={skill.sectionLang}>
             <h3>{i18n.t(skill.sectionLang)}</h3>
-            <ul>
+            <ul className={style.SkillList}>
                 {skill.tech?.map((techItem) => (
                     <li
-                        className={`${style.Tech} ${techItem.classList}`}
                         key={techItem.name}
                     >
-                        {techItem.name}
+                        <Chip className={techItem.classList}>
+                            {techItem.name}
+                        </Chip>
                     </li>
                 ))}
             </ul>

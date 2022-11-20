@@ -3,15 +3,18 @@ import {
     Education,
     isEducationList,
     isJobList,
+    isSkillList,
     Job,
+    Skill
 } from '../../data/cv';
 import { EducationComponent } from '../Education/Education';
 import { JobComponent } from '../Job/Job';
+import { SkillComponent } from '../Skill/Skill';
 
 import style from './CVList.module.css';
 
 type CVListProps = {
-    cvList: Job[] | Education[];
+    cvList: Job[] | Education[] | Skill[];
 };
 
 export const CVList: FC<CVListProps> = ({ cvList }) => {
@@ -31,6 +34,18 @@ export const CVList: FC<CVListProps> = ({ cvList }) => {
                     <EducationComponent
                         key={`${education.universityLang}${i}`}
                         education={education}
+                    />
+                ))}
+            </ul>
+        );
+    }
+    if (isSkillList(cvList)) {
+        return (
+            <ul className={style.CVList}>
+                {cvList.map((skill, i) => (
+                    <SkillComponent
+                        key={`${skill.sectionLang}${i}`}
+                        skill={skill}
                     />
                 ))}
             </ul>

@@ -1,5 +1,7 @@
 // write cv generator
 
+import { UserLink } from "./about";
+
 export const cvI18N = {
     ru: {
         name: 'Андрей Парфенов',
@@ -42,11 +44,7 @@ export const cvI18N = {
     },
 };
 
-export type Contact = {
-    icon: string;
-    link: string;
-    name: string;
-}
+export type Contact = UserLink;
 
 export type Tech = {
     name: string;
@@ -91,13 +89,13 @@ export const cvData: CV = {
     contacts: [
         {
             icon: 'brand-telegram',
-            link: 'https://t.me/rawkangaroo',
-            name: 'telegram',
+            url: 'https://t.me/rawkangaroo',
+            text: 'telegram',
         },
         {
             icon: 'at',
-            link: 'mailto:asleeppiano@outlook.com',
-            name: 'asleeppiano@outlook.com',
+            url: 'mailto:asleeppiano@outlook.com',
+            text: 'asleeppiano@outlook.com',
         },
     ],
     skills: [
@@ -131,13 +129,13 @@ export const cvData: CV = {
     jobs: [
         {
             company: 'ВКонтакте',
-            class: 'vk',
+            class: 'c-job--vk',
             start: new Date('2022-04-13'),
             description: [{ textLang: 'cv.jobVK.text' }, { textLang: 'cv.jobVK.text2' }],
         },
         {
             company: 'Кошелек',
-            class: 'koshelek',
+            class: 'c-job--koshelek',
             start: new Date('2020-09-14'),
             end: new Date('2022-04-04'),
             description: [
@@ -149,7 +147,7 @@ export const cvData: CV = {
         },
         {
             company: 'Розарио',
-            class: 'rozario',
+            class: 'c-job--rozario',
             start: new Date('2019-11-01'),
             end: new Date('2020-07-01'),
             description: [
@@ -161,7 +159,7 @@ export const cvData: CV = {
         },
         {
             company: 'Фриланс',
-            class: 'freelance',
+            class: 'c-job--freelance',
             start: new Date('2019-06-01'),
             end: new Date('2019-11-01'),
             description: [
@@ -171,7 +169,7 @@ export const cvData: CV = {
         },
         {
             company: 'Севентест',
-            class: 'seventest',
+            class: 'c-job--seventest',
             start: new Date('2017-08-01'),
             end: new Date('2018-01-01'),
             description: [
@@ -213,4 +211,12 @@ export function isEducation(data: unknown): data is Education {
 
 export function isEducationList(data: unknown[]): data is Education[]  {
     return Array.isArray(data) && isEducation(data[0]);
+}
+
+export function isSkill(data: unknown): data is Skill {
+    return (data as Skill).tech !== undefined || (data as Skill).list !== undefined;
+}
+
+export function isSkillList(data: unknown[]): data is Skill[]  {
+    return Array.isArray(data) && isSkill(data[0]);
 }

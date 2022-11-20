@@ -1,6 +1,8 @@
 import rosetta from 'rosetta';
 import { aboutI18N } from '../data/about';
 import { adminI18N } from '../data/admin';
+import { cvI18N } from '../data/cv';
+import { footerI18N } from '../data/footer';
  
 // TODO provide data
 // about - about me page
@@ -16,6 +18,12 @@ export const i18n = rosetta({
         },
         about: {
             ...aboutI18N['ru']
+        },
+        cv: {
+            ...cvI18N['ru']
+        },
+        footer: {
+            ...footerI18N['ru']
         }
     }
 });

@@ -11,6 +11,8 @@
 
 .MyLinkSimple {
     color: var(--color-text);
+    display: flex;
+    gap: 4px;
 }
 
 .MyLinkSimple:active {
@@ -31,7 +33,6 @@
     transition: color .16s linear,background .26s ease,transform .26s ease;
     text-transform: uppercase;
     padding: 0.2rem;
-
 }
 
 .MyLinkBig:visited {
