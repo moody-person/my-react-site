@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import Link from 'next/link';
 import React, { FC, ReactNode } from 'react';
 import style from './MyLink.module.css';
@@ -13,13 +14,14 @@ type MyLinkProps = {
     href: string;
     icon?: ReactNode;
     children: ReactNode;
+    isActive: boolean;
 };
 
-export const MyLink: FC<MyLinkProps> = ({ href, theme, children }) => {
+export const MyLink: FC<MyLinkProps> = ({ href, theme, children, isActive = false }) => {
     if (theme === LinkTheme.BIG) {
         return (
             <Link href={href}>
-                <span className={style.MyLinkBig}>
+                <span className={clsx(style.MyLinkBig, {[style.MyLinkBigActive]: isActive})}>
                     {children}
                 </span>
             </Link>
@@ -27,7 +29,7 @@ export const MyLink: FC<MyLinkProps> = ({ href, theme, children }) => {
     } else if (theme == LinkTheme.SIMPLE) {
         return (
             <Link href={href}>
-                <span className={style.MyLinkSimple}>
+                <span className={clsx(style.MyLinkSimple, {[style.MyLinkSimpleActive]: isActive})}>
                     {children}
                 </span>
             </Link>
@@ -35,7 +37,7 @@ export const MyLink: FC<MyLinkProps> = ({ href, theme, children }) => {
     } else if (theme === LinkTheme.ICON) {
         return (
             <Link href={href}>
-                <span className={style.MyLinkIcon}>
+                <span className={clsx(style.MyLinkIcon, {[style.MyLinkIconActive]: isActive})}>
                     {children}
                 </span>
             </Link>

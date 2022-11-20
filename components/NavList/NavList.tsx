@@ -24,7 +24,7 @@ export const NavList: FC<NavListProps> = ({ navList, theme}) => {
           )
     } else if (theme === NavTheme.MAIN) {
         return (
-            <ul className={style.NavList}>
+            <ul className={style.NavListMain}>
                 {navList.map((nav) => <NavItem key={nav.name} nav={nav} />)}
             </ul>
           )

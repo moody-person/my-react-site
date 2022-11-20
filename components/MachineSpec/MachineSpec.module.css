@@ -1,0 +1,17 @@
+.MachineSpecName {
+    font-weight: 500;
+    font-size: var(--text-lg);
+}
+
+.MachineSpecTitle {
+    font-weight: 500;
+    font-size: var(--text-base);
+}
+
+.MachineSpecInfo {
+    margin-top: 10px;
+}
+
+.MachineSpecList {
+    margin-top: 5px;
+}

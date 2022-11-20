@@ -3,6 +3,8 @@ export const aboutI18N = {
         title: 'Обо мне',
         cv: 'резюме',
         spec: 'спецификация',
+        herz: 'Ггц',
+        gb: 'ГБ',
     },
 };
 
@@ -12,6 +14,7 @@ export type UserLink = {
     text?: string;
     label?: string;
     textLang?: string;
+    isActive?: boolean;
 };
 
 type MachineSpec = {

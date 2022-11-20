@@ -125,3 +125,7 @@ table th {
 time {
     font-family: var(--monospace);
 }
+
+.about-text p {
+  margin-top: 5px;
+}

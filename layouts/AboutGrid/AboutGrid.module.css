@@ -1,0 +1,22 @@
+.AboutGrid {
+    display: grid;
+    grid-template-areas: 
+        "text photo"
+        "links machine";
+}
+
+.AboutGridText {
+    grid-area: text;
+}
+
+.AboutGridPhoto {
+    grid-area: photo;
+}
+
+.AboutGridLinks {
+    grid-area: links;
+}
+
+.AboutGridMachine {
+    grid-area: machine;
+}

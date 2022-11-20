@@ -13,6 +13,58 @@
     color: var(--color-text);
 }
 
+.MyLinkSimple:active {
+    color: var(--color-text);
+}
+
 .MyLinkSimple:hover {
     color: var(--color-extra);
+}
+
+.MyLinkBig {
+    color: var(--color-back-link-text);
+    position:relative;
+    background: linear-gradient(0deg, var(--color-back-link-background) 50%,transparent 0);
+    background-position: 0 0;
+    background-size: 100% 200%;
+    font-family: var(--monospace);
+    transition: color .16s linear,background .26s ease,transform .26s ease;
+    text-transform: uppercase;
+    padding: 0.2rem;
+
+}
+
+.MyLinkBig:visited {
+    color: var(--color-back-link-text);
+}
+
+.MyLinkBig:hover {
+    background-position: 0 100%;
+    color: var(--color-back-link-hover);
+}
+
+.MyLinkBig:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+.MyLinkBigActive {
+    font-family: var(--monospace);
+    cursor: default;
+    background: var(--color-text);
+    color: var(--color-text-inv);
+
+}
+
+.MyLinkBigActive:visited {
+    background: var(--color-text);
+    color: var(--color-text-inv);
+}
+
+.MyLinkBigInv {
+    --color-back-link-text: var(--color-text-inv);
 }

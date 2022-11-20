@@ -7,3 +7,11 @@
 .LinkListHero {
     margin-top: 5px;
 }
+
+.LinkListAbout {
+    display: inline-flex;
+    background-color: var(--color-scnd);
+    padding: 6px 8px;
+    border-radius: 4px;
+    margin-top: 10px;
+}

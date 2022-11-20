@@ -11,7 +11,7 @@ export const SimpleLinkItem: FC<SimpleLinkItemProps> = ({ link }) => {
     if (link.text) {
         return (
             <li className={style.SimpleLinkItem}>
-                <MyLink href={link.url} theme={LinkTheme.SIMPLE}>
+                <MyLink href={link.url} theme={LinkTheme.SIMPLE} isActive={link.isActive}>
                     {link.textLang ? i18n.t(link.textLang) : link.text}
                 </MyLink>
             </li>
@@ -31,6 +31,7 @@ export const SimpleLinkItem: FC<SimpleLinkItemProps> = ({ link }) => {
                         href={link.url}
                         aria-label={link.label}
                         theme={LinkTheme.ICON}
+                        isActive={link.isActive}
                     >
                         {icon}
                     </MyLink>
@@ -39,7 +40,7 @@ export const SimpleLinkItem: FC<SimpleLinkItemProps> = ({ link }) => {
         }
         return (
             <li className={style.SimpleLinkItem}>
-                <MyLink key={link.url} href={link.url} theme={LinkTheme.SIMPLE}>
+                <MyLink key={link.url} href={link.url} theme={LinkTheme.SIMPLE} isActive={link.isActive}>
                     {link.textLang ? i18n.t(link.textLang) : link.text}
                 </MyLink>
             </li>
