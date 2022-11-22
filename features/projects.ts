@@ -1,61 +1,9 @@
+// Use exports from this module only in server-side functions (getStaticProps, getServerSideProps)
 import { HttpRequestBuilder, isOk } from '@asleeppiano/http-client';
 import fs from 'fs';
 import path from 'path';
-import { MyImageType } from '../components/MyImage/MyImage';
 import { githubApiClient, GITHUB_API_URL } from './api';
-
-export type Project = {
-    name: string;
-    host: string;
-    link: string;
-    image?: MyImageType;
-};
-
-export type Cacheable = {
-    endDate: string;
-};
-
-export type GithubRepo = {
-    id: number;
-    name: string;
-    description: string;
-    forks: number;
-    stargazers_count: number;
-    url: string;
-    html_url: string;
-    languages_url: string;
-    languages?: Array<string>; // use it for downloaded lanugages
-    lastDateFetched?: number;
-};
-
-export type GithubProject = GithubRepo & Project;
-
-export type CachedProject = { project: GithubProject[] } & Cacheable;
-
-export type Tech = {
-    name: string;
-    url?: string;
-};
-
-export type RepoStructure = {
-    id: number;
-    title: string;
-    link: string;
-    image?: MyImageType;
-    techList: Array<Tech>;
-    description: string;
-    forks: number;
-    stars: number;
-    repo: {
-        link: string;
-        name: string;
-    };
-};
-
-export type ProjectsState = {
-    projects: Array<RepoStructure> | null;
-    error: Error | null;
-};
+import { GithubProject, GithubRepo, Project, RepoName, RepoStructure, Tech } from './projects.types';
 
 const projectsList: Project[] = [
     {
@@ -122,7 +70,7 @@ function adaptGithubRepo(repo: GithubRepo & Project) {
 
         repo: {
             link: repo.html_url,
-            name: 'github',
+            name: RepoName.GITHUB,
         },
     };
 }
@@ -144,6 +92,12 @@ function adaptToRepoStructure(
 export async function fetchGithubProjects(): Promise<Array<RepoStructure>> {
     const request = new HttpRequestBuilder()
         .url(`${GITHUB_API_URL}/users/moody-person/repos`)
+        .headers({
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            // https://stackoverflow.com/questions/39907742/github-api-is-responding-with-a-403-when-using-requests-request-function
+            'User-Agent': 'next.js application'
+        })
         .get()
         .build();
     const repos = await githubApiClient.send<GithubRepo[]>(request);
@@ -218,7 +172,7 @@ const cacheDir = path.resolve(__dirname, '../_cache');
 const cacheDest = path.resolve(cacheDir, 'projects.json');
 
 export async function getProjectsData(): Promise<
-    Array<RepoStructure> | undefined
+    Array<RepoStructure> | null
 > {
     try {
         if (fs.existsSync(cacheDest)) {
@@ -232,14 +186,17 @@ export async function getProjectsData(): Promise<
             fs.mkdirSync(cacheDir);
         }
         const githubProjects = await fetchGithubProjects();
-        const cachedProject = {
-            projects: githubProjects,
-            endDate: parseDuration('1w'),
-        };
-
-        fs.writeFileSync(cacheDest, JSON.stringify(cachedProject));
-        return githubProjects;
+        if (githubProjects.length > 0) {
+            const cachedProject = {
+                projects: githubProjects,
+                endDate: parseDuration('1w'),
+            };
+            fs.writeFileSync(cacheDest, JSON.stringify(cachedProject));
+            return githubProjects;    
+        }
+        return null;
     } catch (e) {
         console.error('Cannot get projects: ', e);
+        return null;
     }
 }

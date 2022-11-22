@@ -5,7 +5,7 @@
     justify-content: space-between;
     margin: 0 auto;
     padding: 16px 0;
-    flex: 0 0;
+    flex-shrink: 0;
 }
 
 .FooterTech {

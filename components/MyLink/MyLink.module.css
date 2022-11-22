@@ -1,8 +1,8 @@
 .MyLinkIcon {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-text);
+    color: var(--my-link-icon-color, var(--color-text));
 }
 
 .MyLinkIcon:hover {
@@ -10,13 +10,13 @@
 }
 
 .MyLinkSimple {
-    color: var(--color-text);
-    display: flex;
+    color: var(--my-link-simple-color, var(--color-text));
+    display: inline-flex;
     gap: 4px;
 }
 
 .MyLinkSimple:active {
-    color: var(--color-text);
+    color: var(--my-link-simple-color-active, var(--color-text));
 }
 
 .MyLinkSimple:hover {

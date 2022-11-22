@@ -10,6 +10,7 @@ type SkillProps = {
     tag?: keyof JSX.IntrinsicElements;
 };
 
+// TODO remove li tag, use div
 export const SkillComponent: FC<SkillProps> = ({ skill, tag }) => {
     const CustomTag = tag ?? 'li';
     return (

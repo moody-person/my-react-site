@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { RepoStructure } from '../../features/projects';
+import { RepoStructure } from '../../features/projects.types';
 import { Project } from '../Project/Project';
 
 import style from './ProjectsList.module.css';
@@ -10,10 +10,10 @@ type ProjectsListProps = {
 
 export const ProjectsList: FC<ProjectsListProps> = ({ projects }) => {
     return (
-        <ul className={style.ProjectsList}>
+        <div className={style.ProjectsList}>
             {projects.map((project) => (
                 <Project key={project.id} project={project} />
             ))}
-        </ul>
+        </div>
     );
 };

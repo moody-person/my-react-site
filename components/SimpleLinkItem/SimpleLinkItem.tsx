@@ -27,7 +27,6 @@ export const SimpleLinkItem: FC<SimpleLinkItemProps> = ({ link }) => {
             return (
                 <li className={style.SimpleLinkItem}>
                     <MyLink
-                        key={link.url}
                         href={link.url}
                         aria-label={link.label}
                         theme={LinkTheme.ICON}

@@ -2,13 +2,23 @@ import Head from 'next/head';
 import { MainLayout } from '../layouts/MainLayout/MainLayout';
 import { TextWithBack } from '../components/TextWIthBack/TextWithBack';
 import { i18n } from '../i18n/i18n';
-import { RepoStructure } from '../features/projects';
+import { getProjectsData, RepoStructure } from '../features/projects';
 import { ProjectsList } from '../components/ProjectsList/ProjectsList';
 
 type ProjectsProps = {
     projects: RepoStructure[],
 }
 
+export async function getStaticProps() {
+    const repos = await getProjectsData();
+    return {
+        props: {
+            projects: repos,
+        }
+    }
+}
+
+// TODO: add router loading
 export default function Projects({ projects }: ProjectsProps) {
     return (
         <MainLayout>
@@ -21,7 +31,7 @@ export default function Projects({ projects }: ProjectsProps) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <TextWithBack>{i18n.t('projects.title')}</TextWithBack>
-            <ProjectsList projects={projects} />
+            {projects && <ProjectsList projects={projects} />}
         </MainLayout>
     );
 }

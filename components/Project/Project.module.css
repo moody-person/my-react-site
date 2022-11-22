@@ -1,0 +1,48 @@
+.Project {
+    display: flex;
+    flex-direction: column;
+    max-width: var(--max-project-width);
+    width: 100%;
+    position: relative;
+}
+
+.ProjectImage {
+    --project-image-size: 500px;
+
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    max-width: var(--project-image-size);
+    min-height: var(--project-image-size);
+}
+
+.ProjectMeta {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 12px;
+    display: grid;
+    border: 1px solid black;
+    background: rgba(255, 255, 255, 0.9);
+    grid-template-areas:
+        "title repo"
+        "description description";
+    grid-template-columns: 2fr 1fr;
+}
+
+.ProjectTitle {
+    grid-area: title;
+}
+
+.ProjectDescription {
+    grid-area: description;
+}
+
+.ProjectRepo {
+    grid-area: repo;
+    justify-self: end;
+}
