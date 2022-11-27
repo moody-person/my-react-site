@@ -10,10 +10,12 @@ type ProjectsListProps = {
 
 export const ProjectsList: FC<ProjectsListProps> = ({ projects }) => {
     return (
-        <div className={style.ProjectsList}>
+        <ul className={style.ProjectsList}>
             {projects.map((project) => (
-                <Project key={project.id} project={project} />
+                <li key={project.id} className={style.ProjectsListItem}>
+                    <Project project={project} />
+                </li>
             ))}
-        </div>
+        </ul>
     );
 };

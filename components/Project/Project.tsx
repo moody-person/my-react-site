@@ -38,16 +38,20 @@ type ProjectProps = {
 export const Project: FC<ProjectProps> = ({ project }: ProjectProps) => {
     return (
         <div className={style.Project}>
-            <div className={style.ProjectImage}>
-                <MyImage
-                    height={project.image?.height ?? 500}
-                    width={project.image?.width ?? 500}
-                    src={project.image?.src ?? 'https://via.placeholder.com/700x700.png'}
-                    alt={project.description}
-                />
-            </div>
+            <a href={project.link} className={style.ProjectLink}>
+                <div className={style.ProjectImage}>
+                    <MyImage
+                        height={project.image?.height ?? 500}
+                        width={project.image?.width ?? 500}
+                        src={project.image?.src ?? 'https://via.placeholder.com/700x700.png'}
+                        alt={project.description}
+                    />
+                </div>
+            </a>
             <div className={style.ProjectMeta}>
-                <h3 className={style.ProjectTitle}>{project.title}</h3>
+                <a href={project.link} className={style.ProjectLink}>
+                    <h3 className={style.ProjectTitle}>{project.title}</h3>
+                </a>
                 <div className={style.ProjectDescription}>
                     {project.description}
                 </div>

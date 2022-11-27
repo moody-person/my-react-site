@@ -4,6 +4,10 @@ import { UserLink } from "./about";
 
 export const cvI18N = {
     ru: {
+        seo: {
+            title: 'Андрей Парфенов | Резюме',
+            description: 'Резюме',
+        },
         name: 'Андрей Парфенов',
         profession: 'Разработчик интерфейсов',
         programmingLanguages: 'Языки программирования',

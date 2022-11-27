@@ -15,3 +15,8 @@
 .MachineSpecList {
     margin-top: 5px;
 }
+
+.MachineSpecKey {
+    width: 7ch;
+    display: inline-block;
+}

@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 
 export type Nav = {
-    name: string;
+    nameLang: string;
     url: string;
     isCurrent: boolean;
 }
@@ -9,27 +9,27 @@ export type Nav = {
 // Sync routes with pages file names
 const routes = [
     {
-        name: 'home',
+        nameLang: 'nav.home',
         url: '/',
         isCurrent: false,
     },
     {
-        name: 'about',
+        nameLang: 'nav.about',
         url: '/about',
         isCurrent: false,
     },
     {
-        name: 'articles',
+        nameLang: 'nav.articles',
         url: '/articles',
         isCurrent: false,
     },
     {
-        name: 'cv',
+        nameLang: 'nav.cv',
         url: '/cv',
         isCurrent: false,
     },
     {
-        name: 'projects',
+        nameLang: 'nav.projects',
         url: '/projects',
         isCurrent: false,
     },

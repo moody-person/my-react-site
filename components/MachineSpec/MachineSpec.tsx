@@ -20,7 +20,7 @@ export const MachineSpec: FC<MachineSpecProps> = ({ machine }) => {
                         machine.spec(i18n.t('about.herz'), i18n.t('about.gb'))
                     ).map(([key, value]) => (
                         <li key={key}>
-                            <span>{key}: </span>
+                            <span className={style.MachineSpecKey}>{key}: </span>
                             <span>{value}</span>
                         </li>
                     ))}

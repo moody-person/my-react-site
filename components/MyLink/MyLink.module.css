@@ -1,3 +1,9 @@
+.MyLinkContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .MyLinkIcon {
     display: inline-flex;
     align-items: center;

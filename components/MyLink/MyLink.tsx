@@ -20,7 +20,7 @@ type MyLinkProps = {
 export const MyLink: FC<MyLinkProps> = ({ href, theme, children, isActive = false }) => {
     if (theme === LinkTheme.BIG) {
         return (
-            <Link href={href}>
+            <Link href={href} className={style.MyLinkContainer}>
                 <span className={clsx(style.MyLinkBig, {[style.MyLinkBigActive]: isActive})}>
                     {children}
                 </span>
@@ -28,7 +28,7 @@ export const MyLink: FC<MyLinkProps> = ({ href, theme, children, isActive = fals
         );
     } else if (theme == LinkTheme.SIMPLE) {
         return (
-            <Link href={href}>
+            <Link href={href} className={style.MyLinkContainer}>
                 <span className={clsx(style.MyLinkSimple, {[style.MyLinkSimpleActive]: isActive})}>
                     {children}
                 </span>
@@ -36,7 +36,7 @@ export const MyLink: FC<MyLinkProps> = ({ href, theme, children, isActive = fals
         )
     } else if (theme === LinkTheme.ICON) {
         return (
-            <Link href={href}>
+            <Link href={href} className={style.MyLinkContainer}>
                 <span className={clsx(style.MyLinkIcon, {[style.MyLinkIconActive]: isActive})}>
                     {children}
                 </span>

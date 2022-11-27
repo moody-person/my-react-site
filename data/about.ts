@@ -1,5 +1,9 @@
 export const aboutI18N = {
     ru: {
+        seo: {
+            title: 'Андрей Парфенов | Обо мне',
+            description: 'Обо мне',
+        },
         title: 'Обо мне',
         cv: 'резюме',
         spec: 'спецификация',
@@ -23,17 +27,17 @@ type MachineSpec = {
     gpu?: string;
     storage?: string;
     os?: string;
-}
+};
 
 export type MyMachine = {
     link: string;
     name: string;
     spec: (herzLang: string, gbLang: string) => MachineSpec;
-}
+};
 
 export type AboutData = {
-    links: UserLink[]
-}
+    links: UserLink[];
+};
 
 export const aboutData = {
     links: [
@@ -57,16 +61,16 @@ export const aboutData = {
         },
     ],
     machine: {
-        link: 'https://www.ozon.ru/product/13-3-noutbuk-lenovo-ideapad-s540-13are-82dl003wru-amd-ryzen-7-4800u-1-8-ggts-ram-16-gb-ssd-512-gb-226665050/?sh=NWyGFZW8Wg',
-        name: 'Lenovo IdeaPad S540-13ARE',
+        link: 'https://www.apple.com/shop/buy-mac/macbook-pro/14-inch',
+        name: 'Apple macbook pro 14',
         spec(herzLang: string, gbLang: string) {
             return {
-                cpu: `AMD Ryzen 7 4800U (1.8 ${herzLang})`,
+                cpu: `8-core m1pro`,
                 ram: `16 ${gbLang}`,
-                gpu: 'AMD Radeon Graphics',
+                gpu: '14-core',
                 storage: `512 ${gbLang}`,
-                os: 'Windows 11 Home',    
-            }
+                os: 'macOS',
+            };
         },
     },
-}
+};

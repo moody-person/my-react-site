@@ -2,44 +2,9 @@
 import { HttpRequestBuilder, isOk } from '@asleeppiano/http-client';
 import fs from 'fs';
 import path from 'path';
+import { projectsList } from '../data/projects';
 import { githubApiClient, GITHUB_API_URL } from './api';
 import { GithubProject, GithubRepo, Project, RepoName, RepoStructure, Tech } from './projects.types';
-
-const projectsList: Project[] = [
-    {
-        name: 'origin-hugo-theme',
-        host: 'github',
-        link: 'https://asleeppiano.gitlab.io/origin-hugo-site',
-        image: {
-            src: '/static/images/origin-hugo-theme/origin-hugo-theme.png',
-            width: 500,
-            height: 500,
-            alt: 'origin hugo',
-        },
-    },
-    {
-        name: '11ty-starter',
-        host: 'github',
-        link: 'https://moody-person.github.io/11ty-starter',
-        image: {
-            src: '/static/images/11ty-starter/11ty-starter.png',
-            width: 500,
-            height: 500,
-            alt: '11ty starter',
-        },
-    },
-    {
-        name: 'http-client',
-        host: 'github',
-        link: 'https://www.npmjs.com/package/@asleeppiano/http-client',
-        image: {
-            src: '/static/images/http-client/http-client-image.png',
-            width: 500,
-            height: 500,
-            alt: 'http client image',
-        },
-    },
-];
 
 function isGithubRepoAndProject(
     repo: GithubProject | unknown

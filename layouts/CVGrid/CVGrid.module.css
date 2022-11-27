@@ -1,7 +1,6 @@
 .CVGrid {
     width: 100%;
     display: grid;
-    margin-top: 10px;
     gap: 10px;
     grid-template-areas: 
     "header"

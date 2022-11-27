@@ -1,0 +1,13 @@
+.ProjectsList {
+    width: 100%;
+    margin-top: var(--content-margin-top);
+}
+
+.ProjectsListItem {
+    margin: 0 auto;
+    max-width: var(--max-project-width);
+}
+
+.ProjectsListItem + .ProjectsListItem {
+    margin-top: 20px;
+}
