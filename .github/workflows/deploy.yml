@@ -17,7 +17,7 @@ jobs:
         playbook: my-site-playbook.yml
         # Optional, directory where playbooks live
         directory: ./ansible
-          inventory: |
+        inventory: |
           [all]
           andreyparfenov.com
           [all:vars]
