@@ -1,0 +1,25 @@
+name: My website CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Run playbook
+      uses: dawidd6/action-ansible-playbook@v2
+      with:
+        playbook: my-site-playbook.yml
+        # Optional, directory where playbooks live
+        directory: ./ansible
+          inventory: |
+          [all]
+          andreyparfenov.com
+          [all:vars]
+          ansible_connection=ssh
+          ansible_user=devboy

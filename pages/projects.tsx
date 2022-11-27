@@ -2,8 +2,9 @@ import Head from 'next/head';
 import { MainLayout } from '../layouts/MainLayout/MainLayout';
 import { TextWithBack } from '../components/TextWIthBack/TextWithBack';
 import { i18n } from '../i18n/i18n';
-import { getProjectsData, RepoStructure } from '../features/projects';
+import { getProjectsData } from '../features/projects';
 import { ProjectsList } from '../components/ProjectsList/ProjectsList';
+import { RepoStructure } from '../features/projects.types';
 
 type ProjectsProps = {
     projects: RepoStructure[],
