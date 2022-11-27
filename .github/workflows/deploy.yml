@@ -17,6 +17,7 @@ jobs:
         playbook: my-site-playbook.yml
         # Optional, directory where playbooks live
         directory: ./ansible
+        key: ${{secrets.SSH_KEY}}
         inventory: |
           [all]
           andreyparfenov.com

@@ -1,0 +1,24 @@
+---
+- hosts: all
+  tasks:
+    - name: Clone or update a my-react-site github repository
+      git:
+        repo: git@github.com:moody-person/my-react-site.git
+        dest: "{{ansible_env.HOME}}/my-react-site/"
+        clone: yes
+        update: yes
+
+    - name: NODE | Install npm packages
+      shell: npm ci
+      args:
+        chdir: "{{ansible_env.HOME}}/my-react-site/"
+
+    - name: NODE | Run build
+      shell: npm run build
+      args:
+        chdir: "{{ansible_env.HOME}}/my-react-site/"
+
+    - name: NODE | Run start
+      shell: npm run start
+      args:
+        chdir: "{{ansible_env.HOME}}/my-react-site/"
