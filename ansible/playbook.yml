@@ -41,5 +41,4 @@
     - name: Run start with pm2
       shell: ". {{ ansible_env.HOME }}/.nvm/nvm.sh && pm2 start ecosystem.config.js"
       args:
-        chdir: "{{ansible_env.HOME}}/my-react-site/"
         executable: /bin/bash
