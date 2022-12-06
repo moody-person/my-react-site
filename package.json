@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@asleeppiano/http-client": "^1.1.0",
@@ -26,5 +27,8 @@
     "react-dom": "18.2.0",
     "rosetta": "^1.1.0",
     "typescript": "4.9.3"
+  },
+  "devDependencies": {
+    "husky": "^8.0.2"
   }
 }

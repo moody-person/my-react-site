@@ -8,17 +8,38 @@
         clone: yes
         update: yes
 
-    - name: NODE | Install npm packages
-      shell: npm ci
+    - name: Install nvm
+      shell: >
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
       args:
-        chdir: "{{ansible_env.HOME}}/my-react-site/"
+        creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
+        executable: /bin/bash
 
-    - name: NODE | Run build
-      shell: npm run build
+    - name: Install Node.js
+      shell: '. {{ ansible_env.HOME }}/.nvm/nvm.sh && nvm install --lts'
       args:
-        chdir: "{{ansible_env.HOME}}/my-react-site/"
+        creates: "{{ ansible_env.HOME }}/.nvm/versions/node"
+        executable: /bin/bash
 
-    - name: NODE | Run start
-      shell: npm run start
+    - name: Install pm2
+      shell: ". {{ ansible_env.HOME }}/.nvm/nvm.sh && npm i pm2 -g"
+      args:
+        executable: /bin/bash
+
+    - name: Install npm packages
+      shell: ". {{ ansible_env.HOME }}/.nvm/nvm.sh && npm ci"
       args:
         chdir: "{{ansible_env.HOME}}/my-react-site/"
+        executable: /bin/bash
+
+    - name: Run build
+      shell: ". {{ ansible_env.HOME }}/.nvm/nvm.sh && npm run build"
+      args:
+        chdir: "{{ansible_env.HOME}}/my-react-site/"
+        executable: /bin/bash
+
+    - name: Run start with pm2
+      shell: ". {{ ansible_env.HOME }}/.nvm/nvm.sh && pm2 start ecosystem.config.js"
+      args:
+        chdir: "{{ansible_env.HOME}}/my-react-site/"
+        executable: /bin/bash
