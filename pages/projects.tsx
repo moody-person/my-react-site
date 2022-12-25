@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { MainLayout } from '../layouts/MainLayout/MainLayout';
-import { TextWithBack } from '../components/TextWIthBack/TextWithBack';
+import { TextWithBack } from '../components/TextWithBack/TextWithBack';
 import { i18n } from '../i18n/i18n';
 import { getProjectsData } from '../features/projects';
 import { ProjectsList } from '../components/ProjectsList/ProjectsList';

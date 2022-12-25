@@ -3,7 +3,7 @@ import Head from 'next/head';
 import React, { FC, ReactNode } from 'react';
 import { LinkList, LinkListTheme } from '../../components/LinkList/LinkList';
 import { MachineSpec } from '../../components/MachineSpec/MachineSpec';
-import { TextWithBack } from '../../components/TextWIthBack/TextWithBack';
+import { TextWithBack } from '../../components/TextWithBack/TextWithBack';
 import { aboutData } from '../../data/about';
 import { i18n } from '../../i18n/i18n';
 import { AboutGrid } from '../AboutGrid/AboutGrid';

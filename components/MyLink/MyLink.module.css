@@ -31,14 +31,10 @@
 
 .MyLinkBig {
     color: var(--color-back-link-text);
-    position:relative;
-    background: linear-gradient(0deg, var(--color-back-link-background) 50%,transparent 0);
-    background-position: 0 0;
-    background-size: 100% 200%;
-    font-family: var(--monospace);
-    transition: color .16s linear,background .26s ease,transform .26s ease;
+    font-size: var(--text-xxl);
+    font-weight: 900;
     text-transform: uppercase;
-    padding: 0.2rem;
+    font-family: var(--monospace);
 }
 
 .MyLinkBig:visited {
@@ -46,32 +42,51 @@
 }
 
 .MyLinkBig:hover {
-    background-position: 0 100%;
-    color: var(--color-back-link-hover);
+    color: var(--color-extra);
 }
 
-.MyLinkBig:after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-}
-
-.MyLinkBigActive {
+.MyLinkBig.MyLinkActive {
     font-family: var(--monospace);
     cursor: default;
     background: var(--color-text);
     color: var(--color-text-inv);
-
 }
 
-.MyLinkBigActive:visited {
+.MyLinkBig.MyLinkActive:visited {
     background: var(--color-text);
     color: var(--color-text-inv);
 }
 
 .MyLinkBigInv {
     --color-back-link-text: var(--color-text-inv);
+}
+
+.MyLinkPrimary {
+    color: var(--color-back-link-text);
+    position:relative;
+    background: linear-gradient(0deg, var(--color-back-link-background) 50%,transparent 0);
+    background-position: 0 0;
+    background-size: 100% 200%;
+    font-family: var(--monospace);
+    transition: color .16s linear,background .26s ease,transform .26s ease;
+    text-transform: uppercase;
+    padding: 2px 4px;
+}
+
+.MyLinkPrimary:visited {
+    color: var(--color-back-link-text);
+}
+
+.MyLinkPrimary:hover {
+    background-position: 0 100%;
+    color: var(--color-back-link-hover);
+}
+
+.MyLinkPrimary:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
 }

@@ -75,6 +75,7 @@
 .s-light-theme-v2 {
     --color-main:           white;
     --color-main-50:        hsl(0, 0%, 100%, 0.5);
+    --color-secondary:      hsl(36deg, 100%, 89%);
     --color-text:           black;
     --color-text-inv:       hsl(100, 100%, 99%);
     --color-accent:         hsl(61, 100%, 76%);
@@ -85,7 +86,6 @@
     --color-super-extra:    hsl(267, 80%, 31%, 1);
     --color-tertiary:       hsla(147deg, 100%, 79%);
     --color-tertiary-42:    hsla(147deg, 100%, 79%, 42%);
-    --color-scnd:           hsl(36deg, 100%, 89%);
     --color-image-back:     hsla(0, 0%, 55%, 1);
 
     --color-shadow-link: var(--color-extra);

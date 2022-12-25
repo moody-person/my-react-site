@@ -12,7 +12,7 @@ type SkillProps = {
 
 // TODO remove li tag, use div
 export const SkillComponent: FC<SkillProps> = ({ skill, tag }) => {
-    const CustomTag = tag ?? 'li';
+    const CustomTag = tag ?? 'div';
     return (
         <CustomTag className={style.Skill} key={skill.sectionLang}>
             <h3>{i18n.t(skill.sectionLang)}</h3>

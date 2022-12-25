@@ -7,7 +7,7 @@ export const aboutI18N = {
         title: 'Обо мне',
         cv: 'резюме',
         spec: 'спецификация',
-        herz: 'Ггц',
+        hertz: 'Ггц',
         gb: 'ГБ',
     },
 };

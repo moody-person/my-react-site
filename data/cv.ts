@@ -81,15 +81,20 @@ export type Education = {
 }
 
 export type CV = {
+    nameLang: string,
+    professionLang: string,
     contacts: Contact[],
     skills: Skill[],
     jobs: Job[],
     educationList: Education[],
     link: string;
+    links: UserLink[];
 }
 
 
 export const cvData: CV = {
+    nameLang: 'cv.name',
+    professionLang: 'cv.profession',
     contacts: [
         {
             icon: 'brand-telegram',
@@ -100,6 +105,10 @@ export const cvData: CV = {
             icon: 'at',
             url: 'mailto:asleeppiano@outlook.com',
             text: 'asleeppiano@outlook.com',
+        },
+        {
+            url: 'andreyparfenov.com',
+            text: 'website',
         },
     ],
     skills: [
@@ -193,6 +202,17 @@ export const cvData: CV = {
         },
     ],
     link: '/static/cv',
+    links: [
+        {
+            icon: 'brand-github',
+            label: 'github',
+            url: 'https://github.com/moody-person',
+        },
+        {
+            label: 'gitlab',
+            url: 'https://gitlab.com/asleeppiano',
+        }
+    ],
 };
 
 export function useCVData(): {cvData: CV} {

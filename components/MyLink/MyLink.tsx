@@ -7,6 +7,7 @@ export enum LinkTheme {
     BIG = 'big',
     SIMPLE = 'simple',
     ICON = 'icon',
+    PRIMARY = 'primary',
 }
 
 type MyLinkProps = {
@@ -17,32 +18,25 @@ type MyLinkProps = {
     isActive?: boolean;
 };
 
-export const MyLink: FC<MyLinkProps> = ({ href, theme, children, isActive = false }) => {
-    if (theme === LinkTheme.BIG) {
-        return (
-            <Link href={href} className={style.MyLinkContainer}>
-                <span className={clsx(style.MyLinkBig, {[style.MyLinkBigActive]: isActive})}>
-                    {children}
-                </span>
-            </Link>
-        );
-    } else if (theme == LinkTheme.SIMPLE) {
-        return (
-            <Link href={href} className={style.MyLinkContainer}>
-                <span className={clsx(style.MyLinkSimple, {[style.MyLinkSimpleActive]: isActive})}>
-                    {children}
-                </span>
-            </Link>
-        )
-    } else if (theme === LinkTheme.ICON) {
-        return (
-            <Link href={href} className={style.MyLinkContainer}>
-                <span className={clsx(style.MyLinkIcon, {[style.MyLinkIconActive]: isActive})}>
-                    {children}
-                </span>
-            </Link>
-        )
-    }
-
-    return null;
+export const MyLink: FC<MyLinkProps> = ({
+    href,
+    theme,
+    children,
+    isActive = false,
+}) => {
+    return (
+        <Link href={href} className={style.MyLinkContainer}>
+            <span
+                className={clsx({
+                    [style.MyLinkActive]: isActive,
+                    [style.MyLinkBig]: theme === LinkTheme.BIG,
+                    [style.MyLinkSimple]: theme === LinkTheme.SIMPLE,
+                    [style.MyLinkIcon]: theme === LinkTheme.ICON,
+                    [style.MyLinkPrimary]: theme === LinkTheme.PRIMARY,
+                })}
+            >
+                {children}
+            </span>
+        </Link>
+    );
 };

@@ -4,7 +4,7 @@ import { useMyRouter } from '../../features/navigation';
 import { i18n } from '../../i18n/i18n';
 import { LinkList, LinkListTheme } from '../LinkList/LinkList';
 import { NavList, NavTheme } from '../NavList/NavList';
-import { TextWithBack } from '../TextWIthBack/TextWithBack';
+import { TextWithBack } from '../TextWithBack/TextWithBack';
 import style from './Hero.module.css';
 
 type HeroProps = {

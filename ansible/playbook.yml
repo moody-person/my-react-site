@@ -8,6 +8,9 @@
         clone: yes
         update: yes
 
+    - name: Copy images directory to server
+      local_action: ansible.builtin.command rsync -a ../public/images {{ ansible_user }}@{{ inventory_hostname }}:{{ ansible_env.HOME }}/my-react-site/public/
+
     - name: Install nvm
       shell: >
         curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash

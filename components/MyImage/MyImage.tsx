@@ -5,9 +5,9 @@ import style from './MyImage.module.css';
 
 export type MyImageType = {
     src?: string;
-    alt: string;
-    width: number;
-    height: number;
+    alt?: string;
+    width?: number;
+    height?: number;
 }
 
 type MyImageProps = MyImageType;
@@ -19,7 +19,7 @@ export const MyImage: FC<MyImageProps> = ({ src, alt, width, height }) => {
                 <Image
                     className={style.MyImageElement}
                     src={src}
-                    alt={alt}
+                    alt={alt ?? ''}
                     width={width}
                     height={height}
                 />
