@@ -1,0 +1,21 @@
+.AboutLayoutBox {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--color-text);
+}
+
+.AboutLayoutLinks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.AboutLayoutLinkList {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 4px;
+}
+
+.AboutLayoutDevices {
+    
+}

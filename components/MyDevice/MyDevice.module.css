@@ -1,0 +1,23 @@
+.MyDevice {
+    display: grid;
+    grid-template-areas:
+        'label image'
+        'name image'; 
+}
+
+.MyDeviceName {
+    grid-area: name;
+    font-weight: 500;
+    font-size: var(--text-lg);
+}
+
+.MyDeviceLabel {
+    grid-area: label;
+    font-weight: 500;
+    font-size: var(--text-base);
+}
+
+.MyDeviceImage {
+    grid-area: image;
+    margin-top: 10px;
+}

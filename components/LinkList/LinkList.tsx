@@ -30,13 +30,7 @@ export const LinkList: FC<LinkListProps> = ({ linkList, theme }) => {
             </ul>
         );
     } else if (theme === LinkListTheme.ABOUT) {
-        return (
-            <ul className={clsx(style.LinkList, style.LinkListAbout)}>
-                {linkList.map((link) => (
-                    <SimpleLinkItem key={link.url} link={link} />
-                ))}
-            </ul>
-        );
+        return '';
     } else if (theme === LinkListTheme.CV) {
         return (
             <ul className={clsx(style.LinkList, style.LinkListCV)}>

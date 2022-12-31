@@ -3,3 +3,8 @@
     margin: 16px auto;
     width: 100%;
 }
+
+.HeaderNavList {
+    display: flex;
+    align-items: center;
+}

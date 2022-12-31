@@ -10,6 +10,8 @@ export const aboutI18N = {
         hertz: 'Ггц',
         gb: 'ГБ',
         sources: 'исходники',
+        mylaptop: 'мой ноутбук',
+        myphone: 'мой смартфон',
     },
 };
 
@@ -22,22 +24,16 @@ export type UserLink = {
     isActive?: boolean;
 };
 
-type MachineSpec = {
-    cpu?: string;
-    ram?: string;
-    gpu?: string;
-    storage?: string;
-    os?: string;
-};
-
-export type MyMachine = {
-    link: string;
+export type TMyDevice = {
     name: string;
-    spec: (herzLang: string, gbLang: string) => MachineSpec;
+    link: string;
+    labelLang: string;
+    image?: string;
 };
 
 export type AboutData = {
     links: UserLink[];
+    devices: TMyDevice[];
 };
 
 export const aboutData = {
@@ -71,17 +67,18 @@ export const aboutData = {
             url: 'https://github.com/moody-person/my-react-site',
         },
     ],
-    machine: {
-        link: 'https://www.apple.com/shop/buy-mac/macbook-pro/14-inch',
-        name: 'Apple macbook pro 14',
-        spec(herzLang: string, gbLang: string) {
-            return {
-                cpu: `8-core m1pro`,
-                ram: `16 ${gbLang}`,
-                gpu: '14-core',
-                storage: `512 ${gbLang}`,
-                os: 'macOS',
-            };
+    devices: [
+        {
+            image: '/images/devices/macbook_pro_14.webp',
+            name: 'macbook pro 14 (2021)',
+            labelLang: 'about.mylaptop',
+            link: 'https://www.apple.com/shop/buy-iphone/iphone-13',
         },
-    },
+        {
+            image: '/images/devices/iphone_13.webp',
+            name: 'iPhone 13',
+            labelLang: 'about.myphone',
+            link: 'https://www.apple.com/shop/buy-mac/macbook-pro/14-inch',
+        },
+    ],
 };

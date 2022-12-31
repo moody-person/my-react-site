@@ -4,8 +4,8 @@
     margin-top: 10px;
     gap: 10px;
     grid-template-areas: 
-        "text photo machine"
-        "links links machine";
+        "text links"
+        "devices .";
 }
 
 .AboutGridText {
@@ -20,6 +20,6 @@
     grid-area: links;
 }
 
-.AboutGridMachine {
-    grid-area: machine;
+.AboutGridDevices {
+    grid-area: devices;
 }

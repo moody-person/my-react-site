@@ -11,7 +11,7 @@ export const MainLayout: FC<MainLayoutProps> = ({ children }) => {
     return (
         <div className={style.MainLayout}>
             <Header />
-            <main className={style.MainLayout}>{children}</main>
+            <main>{children}</main>
             <Footer />
         </div>
     );

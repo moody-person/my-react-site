@@ -12,6 +12,7 @@ export type MyImageType = {
 
 type MyImageProps = MyImageType;
 
+// TODO: fix gray fields
 export const MyImage: FC<MyImageProps> = ({ src, alt, width, height }) => {
     if (src) {
         return (
@@ -20,8 +21,8 @@ export const MyImage: FC<MyImageProps> = ({ src, alt, width, height }) => {
                     className={style.MyImageElement}
                     src={src}
                     alt={alt ?? ''}
-                    width={width}
-                    height={height}
+                    width={width ?? 500}
+                    height={height ?? 500}
                 />
             </div>
         );
