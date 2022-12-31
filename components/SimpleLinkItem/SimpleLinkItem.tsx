@@ -1,4 +1,4 @@
-import { IconBrandGithub, IconBrandGitlab } from '@tabler/icons';
+import { IconBrandGithub, IconBrandGitlab, IconBrandTelegram, IconBrandVk } from '@tabler/icons';
 import React, { FC, ReactNode } from 'react';
 import { UserLink } from '../../data/about';
 import { i18n } from '../../i18n/i18n';
@@ -8,7 +8,7 @@ import style from './SimpleLinkItem.module.css';
 type SimpleLinkItemProps = { link: UserLink };
 
 export const SimpleLinkItem: FC<SimpleLinkItemProps> = ({ link }) => {
-    if (link.text) {
+    if (link.text || link.textLang) {
         return (
             <li className={style.SimpleLinkItem}>
                 <MyLink href={link.url} theme={LinkTheme.SIMPLE} isActive={link.isActive}>
@@ -23,6 +23,10 @@ export const SimpleLinkItem: FC<SimpleLinkItemProps> = ({ link }) => {
                 icon = <IconBrandGitlab color="currentColor" size={22} />;
             } else if (link.icon === 'brand-github') {
                 icon = <IconBrandGithub color="currentColor" size={22} />;
+            } else if (link.icon === 'brand-vk') {
+                icon = <IconBrandVk color="currentColor" size={22} />;
+            } else if (link.icon === 'brand-telegram') {
+                icon = <IconBrandTelegram color="currentColor" size={22} />;
             }
             return (
                 <li className={style.SimpleLinkItem}>

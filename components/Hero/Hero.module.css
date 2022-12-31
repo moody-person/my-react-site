@@ -1,19 +1,29 @@
 .Hero {
     display: grid;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas: 'meta' 'navlist';
-
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 32px;
     height: 100%;
+    padding: 8px;
 }
 
 .HeroMeta {
     grid-area: meta;
+    align-self: end;
 }
 
-.HeroNavList {
+.HeroNavListArea {
     grid-area: navlist;
+    align-self: start;
+}
+
+.HeroLinkList {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
 }
 
 .HeroDescription {
@@ -21,8 +31,24 @@
     margin-top: 5px;
 }
 
-@media (min-width: 400px) {
+.HeroNavList {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 10px;
+}
+
+@media (min-width: 700px) {
     .Hero {
         grid-template-areas: 'meta navlist';
+    }
+    .HeroMeta {
+        grid-area: meta;
+        justify-self: end;
+        align-self: center;
+    }
+    .HeroNavListArea {
+        grid-area: navlist;
+        justify-self: start;
+        align-self: center;
     }
 }

@@ -20,13 +20,7 @@ type LinkListProps = {
 
 export const LinkList: FC<LinkListProps> = ({ linkList, theme }) => {
     if (theme === LinkListTheme.HERO) {
-        return (
-            <ul className={`${style.LinkList} ${style.LinkListHero}`}>
-                {linkList.map((link) => (
-                    <SimpleLinkItem key={link.url} link={link} />
-                ))}
-            </ul>
-        );
+        return '';
     } else if (theme === LinkListTheme.MAIN) {
         return (
             <ul className={style.LinkList}>

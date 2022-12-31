@@ -9,6 +9,7 @@ export const aboutI18N = {
         spec: 'спецификация',
         hertz: 'Ггц',
         gb: 'ГБ',
+        sources: 'исходники',
     },
 };
 
@@ -42,6 +43,16 @@ export type AboutData = {
 export const aboutData = {
     links: [
         {
+            icon: 'brand-telegram',
+            label: 'telegram',
+            url: 'https://t.me/rawkangaroo',
+        },
+        {
+            icon: 'brand-vk',
+            label: 'vk',
+            url: 'https://vk.com/andrey.parfenov',
+        },
+        {
             icon: 'brand-github',
             label: 'github',
             url: 'https://github.com/moody-person',
@@ -52,12 +63,12 @@ export const aboutData = {
             url: 'https://gitlab.com/asleeppiano',
         },
         {
-            textLang: 'about.cv',
-            url: '/cv',
-        },
-        {
             text: 'dotfiles',
             url: 'https://github.com/moody-person/dotfiles',
+        },
+        {
+            textLang: 'about.sources',
+            url: 'https://github.com/moody-person/my-react-site',
         },
     ],
     machine: {

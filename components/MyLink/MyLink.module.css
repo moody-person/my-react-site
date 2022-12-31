@@ -32,9 +32,10 @@
 .MyLinkBig {
     color: var(--color-back-link-text);
     font-size: var(--text-xxl);
-    font-weight: 900;
+    font-weight: 800;
     text-transform: uppercase;
     font-family: var(--monospace);
+    will-change: filter;
 }
 
 .MyLinkBig:visited {
@@ -42,19 +43,25 @@
 }
 
 .MyLinkBig:hover {
+    cursor: pointer;
+    box-shadow: 10px -10px gray, -10px 10px darkgray;
+    border-radius: 8px;
+    transition: box-shadow 0.2s ease;
     color: var(--color-extra);
 }
 
 .MyLinkBig.MyLinkActive {
     font-family: var(--monospace);
     cursor: default;
-    background: var(--color-text);
-    color: var(--color-text-inv);
 }
 
 .MyLinkBig.MyLinkActive:visited {
     background: var(--color-text);
     color: var(--color-text-inv);
+}
+
+.MyLinkBig.MyLinkActive:hover {
+    color: var(--color-text);
 }
 
 .MyLinkBigInv {
