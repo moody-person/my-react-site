@@ -88,7 +88,7 @@
     --color-super-extra:    hsl(267, 80%, 31%, 1);
     --color-tertiary:       hsla(147deg, 100%, 79%);
     --color-tertiary-42:    hsla(147deg, 100%, 79%, 42%);
-    --color-image-back:     hsla(0, 0%, 55%, 1);
+    --color-image-back:     hsla(0, 0%, 90%, 1);
 
     --color-shadow-link: var(--color-extra);
     --color-back-link-text: var(--color-text);

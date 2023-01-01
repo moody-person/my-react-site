@@ -16,6 +16,7 @@ type MyLinkProps = {
     icon?: ReactNode;
     children: ReactNode;
     isActive?: boolean;
+    className?: string;
 };
 
 export const MyLink: FC<MyLinkProps> = ({
@@ -25,8 +26,8 @@ export const MyLink: FC<MyLinkProps> = ({
     isActive = false,
 }) => {
     return (
-        <Link href={href} className={style.MyLinkContainer}>
-            <span
+        <Link href={href}>
+            <a
                 className={clsx({
                     [style.MyLinkActive]: isActive,
                     [style.MyLinkBig]: theme === LinkTheme.BIG,
@@ -36,7 +37,7 @@ export const MyLink: FC<MyLinkProps> = ({
                 })}
             >
                 {children}
-            </span>
+            </a>
         </Link>
     );
 };

@@ -30,6 +30,8 @@
 }
 
 .MyLinkBig {
+    --my-link-big-shadow-offset: 10px;
+
     color: var(--color-back-link-text);
     font-size: var(--text-xxl);
     font-weight: 800;
@@ -44,7 +46,8 @@
 
 .MyLinkBig:hover {
     cursor: pointer;
-    box-shadow: 10px -10px gray, -10px 10px darkgray;
+    box-shadow: var(--my-link-big-shadow-offset) calc(0px - var(--my-link-big-shadow-offset)) gray,
+                calc(0px - var(--my-link-big-shadow-offset)) var(--my-link-big-shadow-offset) darkgray;
     border-radius: 8px;
     transition: box-shadow 0.2s ease;
     color: var(--color-extra);

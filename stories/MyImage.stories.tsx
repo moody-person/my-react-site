@@ -1,6 +1,5 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-
 import { MyImage } from '../components/MyImage/MyImage';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -13,7 +12,7 @@ const DefaultTemplate: ComponentStory<typeof MyImage> = (args) => <MyImage {...a
 
 export const Default = DefaultTemplate.bind({});
 Default.args = {
-  width: 500,
+  width: 774,
   height: 500,
-  src: '/public/images/projects/11ty-starter.png'
+  src: 'https://i.pickadummy.com/300x150?border=5&bordercolor=000000',
 };

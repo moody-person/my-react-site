@@ -10,13 +10,13 @@ export default {
   component: Project,
 } as ComponentMeta<typeof Project>;
 
-const Template: ComponentStory<typeof Project> = (args) => <Project {...args} ></Project>;
+const Template: ComponentStory<typeof Project> = (args) => <div style={{background: 'gray', display: 'flex', justifyContent: 'center'}}><Project {...args} ></Project></div>;
 
 export const Default = Template.bind({});
 Default.args = {
     project: {
         image: {
-            src: '/images/projects/11ty-starter.png',
+            src: 'https://i.pickadummy.com/200x400?border=5&bordercolor=000000',
             alt: '',
         },
         link: 'https://google.com',

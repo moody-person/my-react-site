@@ -41,26 +41,23 @@ export const Project: FC<ProjectProps> = ({ project }: ProjectProps) => {
             <a href={project.link} className={style.ProjectLink}>
                 <div className={style.ProjectImage}>
                     <MyImage
-                        height={project.image?.height ?? 500}
-                        width={project.image?.width ?? 500}
-                        src={project.image?.src ?? 'https://via.placeholder.com/700x700.png'}
+                        height={project.image?.height}
+                        width={project.image?.width}
+                        src={project.image?.src}
                         alt={project.description}
                     />
                 </div>
             </a>
             <div className={style.ProjectMeta}>
-                <a href={project.link} className={style.ProjectLink}>
-                    <h3 className={style.ProjectTitle}>{project.title}</h3>
-                </a>
-                <div className={style.ProjectDescription}>
-                    {project.description}
+                <div className={style.ProjectLink}>
+                    <MyLink theme={LinkTheme.SIMPLE} href={project.link}>
+                        <h3 className={style.ProjectTitle}>{project.title}</h3>
+                    </MyLink>
                 </div>
                 <div className={style.ProjectRepo}>
-                    <GitHostingIcon
-                        name={project.repo.name}
-                        link={project.repo.link}
-                        projectName={project.title}
-                    />
+                    <MyLink theme={LinkTheme.SIMPLE} href={project.repo.link}>
+                        {project.repo.name}
+                    </MyLink>
                 </div>
             </div>
         </div>
