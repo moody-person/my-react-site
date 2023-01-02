@@ -38,7 +38,7 @@ export const projectsList: Project[] = [
         host: 'github',
         link: 'https://www.npmjs.com/package/@asleeppiano/http-client',
         image: {
-            src: '/images/projects/http-client-image.png',
+            src: '/images/projects/http-client.png',
             width: 300,
             height: 300,
             alt: 'http client image',
