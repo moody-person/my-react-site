@@ -32,28 +32,7 @@ export const LinkList: FC<LinkListProps> = ({ linkList, theme }) => {
     } else if (theme === LinkListTheme.ABOUT) {
         return '';
     } else if (theme === LinkListTheme.CV) {
-        return (
-            <ul className={clsx(style.LinkList, style.LinkListCV)}>
-                {linkList.map((link) => {
-                    let icon: ReactNode = '';
-                    if (link.icon === 'brand-telegram') {
-                        icon = <IconBrandTelegram color={'black'} />;
-                    }
-                    if (link.icon === 'at') {
-                        icon = <IconAt color={'black'} />;
-                    }
-                    return (
-                        <MyLink
-                            key={link.url}
-                            theme={LinkTheme.SIMPLE}
-                            href={link.url}
-                        >
-                            {icon} {link.text}
-                        </MyLink>
-                    );
-                })}
-            </ul>
-        );
+        return '';
     }
     return null;
 };

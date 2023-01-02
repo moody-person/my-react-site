@@ -11,7 +11,7 @@ type JobProps = {
 
 export const JobComponent: FC<JobProps> = ({ job }) => {
     return (
-        <li>
+        <div>
             <h3 className={job.class}>{job.company}</h3>
             <CVDate start={job.start} end={job.end} />
             <ul className={style.JobDescriptionList}>
@@ -21,6 +21,6 @@ export const JobComponent: FC<JobProps> = ({ job }) => {
                     </li>
                 ))}
             </ul>
-        </li>
+        </div>
     );
 };

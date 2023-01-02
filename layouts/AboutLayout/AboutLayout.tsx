@@ -28,20 +28,44 @@ export const AboutLayout: FC<FooterProps> = ({ children }) => {
 			</Head>
 			<TextWithBack>{i18n.t('about.title')}</TextWithBack>
 			<AboutGrid>
-				<div className={clsx('about-text', style.AboutLayoutText, style.AboutLayoutBox)}>
+				<div
+					className={clsx(
+						'about-text',
+						style.AboutLayoutText,
+						style.AboutLayoutBox
+					)}
+				>
 					{children}
 				</div>
-				<div className={clsx(style.AboutLayoutLinks, style.AboutLayoutBox)}>
+				<div
+					className={clsx(
+						style.AboutLayoutLinks,
+						style.AboutLayoutBox
+					)}
+				>
 					<ul className={clsx(style.AboutLayoutLinkList)}>
 						{aboutData.links.map((link) => (
-							<SimpleLinkItem key={link.url} link={link} />
+							<li
+								key={link.url}
+								className={style.AboutLayoutLinkListItem}
+							>
+								<SimpleLinkItem link={link} />
+							</li>
 						))}
 					</ul>
 				</div>
-				<div className={clsx(style.AboutLayoutDevices, style.AboutLayoutBox)}>
-					<ul>
+				<div
+					className={clsx(
+						style.AboutLayoutDevices,
+						style.AboutLayoutBox
+					)}
+				>
+					<ul className={style.AboutLayoutDeviceList}>
 						{aboutData.devices.map((device) => (
-							<li key={device.name}>
+							<li
+								key={device.name}
+								className={style.AboutLayoutDeviceListItem}
+							>
 								<MyDevice device={device} />
 							</li>
 						))}

@@ -3,13 +3,13 @@ import { MainLayout } from '../layouts/MainLayout/MainLayout';
 import { useCVData } from '../data/cv';
 import { TextWithBack } from '../components/TextWithBack/TextWithBack';
 import { i18n } from '../i18n/i18n';
-import { IconFile } from '@tabler/icons';
+import { IconAt, IconBrandTelegram, IconBrandVk, IconFile } from '@tabler/icons';
 import { LinkTheme, MyLink } from '../components/MyLink/MyLink';
-
-import style from '../styles/pages/cv.module.css';
 import { CVList } from '../components/CVList/CVList';
 import { CVGrid } from '../layouts/CVGrid/CVGrid';
-import { LinkList, LinkListTheme } from '../components/LinkList/LinkList';
+import clsx from 'clsx';
+import { ReactNode } from 'react';
+import style from '../styles/pages/cv.module.css';
 
 export default function CV() {
 	const { cvData } = useCVData();
@@ -33,21 +33,40 @@ export default function CV() {
 				</div>
 				<p>{i18n.t('cv.profession')}</p>
 				<div>
-					<LinkList
-						theme={LinkListTheme.CV}
-						linkList={cvData.contacts}
-					/>
+					<ul className={clsx(style.CVContactsList)}>
+						{cvData.contacts.slice(0, 3).map((link) => {
+							let icon: ReactNode = '';
+							if (link.icon === 'brand-telegram') {
+								icon = <IconBrandTelegram color={'black'} />;
+							}
+							if (link.icon === 'at') {
+								icon = <IconAt color={'black'} />;
+							}
+							if (link.icon === 'vk') {
+								icon = <IconBrandVk color={'black'} />;
+							}
+							return (
+								<MyLink
+									key={link.url}
+									theme={LinkTheme.SIMPLE}
+									href={link.url}
+								>
+									{icon} {link.text}
+								</MyLink>
+							);
+						})}
+					</ul>
 				</div>
 				<div>
-					<h2>{i18n.t('cv.skills')}</h2>
+					<h2 className={style.CVTitle}>{i18n.t('cv.skills')}</h2>
 					<CVList cvList={cvData.skills} />
 				</div>
 				<div>
-					<h2>{i18n.t('cv.jobExperience')}</h2>
+					<h2 className={style.CVTitle}>{i18n.t('cv.jobExperience')}</h2>
 					<CVList cvList={cvData.jobs} />
 				</div>
 				<div>
-					<h2>{i18n.t('cv.education')}</h2>
+					<h2 className={style.CVTitle}>{i18n.t('cv.education')}</h2>
 					<CVList cvList={cvData.educationList} />
 				</div>
 			</CVGrid>

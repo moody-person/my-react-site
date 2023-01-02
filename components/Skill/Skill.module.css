@@ -1,8 +1,13 @@
 .Skill + .Skill {
     margin-top: 14px;
 }
+
 .SkillList {
     display: flex;
     gap: 10px;
-    margin-top: 5px;
+}
+
+.SkillTitle {
+    font-weight: 900;
+    text-transform: uppercase;
 }

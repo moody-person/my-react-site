@@ -1,6 +1,9 @@
 .ProjectsList {
     width: 100%;
     margin-top: var(--content-margin-top);
+    display: flex;
+    gap: 40px;
+    flex-flow: row wrap;
 }
 
 .ProjectsListItem {

@@ -2,3 +2,7 @@
     list-style-type: disc;
     padding-left: 32px;
 }
+
+.CVListItem {
+    margin-top: 10px;
+}

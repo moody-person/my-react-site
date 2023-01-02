@@ -1,7 +1,7 @@
 .AboutGrid {
     width: 100%;
     display: grid;
-    margin-top: 10px;
+    margin-top: var(--content-margin-top);
     gap: 10px;
     grid-template-areas: 
         "text links"

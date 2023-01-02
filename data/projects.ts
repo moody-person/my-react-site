@@ -17,8 +17,8 @@ export const projectsList: Project[] = [
         link: 'https://asleeppiano.gitlab.io/origin-hugo-site',
         image: {
             src: '/images/projects/origin-hugo-theme.png',
-            width: 500, // TODO: change width
-            height: 500,
+            width: 300, // TODO: change width
+            height: 300,
             alt: 'origin hugo',
         },
     },
@@ -28,8 +28,8 @@ export const projectsList: Project[] = [
         link: 'https://moody-person.github.io/11ty-starter',
         image: {
             src: '/images/projects/11ty-starter.png',
-            width: 500,
-            height: 500,
+            width: 300,
+            height: 300,
             alt: '11ty starter',
         },
     },
@@ -39,8 +39,8 @@ export const projectsList: Project[] = [
         link: 'https://www.npmjs.com/package/@asleeppiano/http-client',
         image: {
             src: '/images/projects/http-client-image.png',
-            width: 500,
-            height: 500,
+            width: 300,
+            height: 300,
             alt: 'http client image',
         },
     },

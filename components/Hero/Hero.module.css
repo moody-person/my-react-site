@@ -1,6 +1,5 @@
 .Hero {
     display: grid;
-    grid-template-columns: 1fr 1fr;
     grid-template-areas: 'meta' 'navlist';
     justify-content: center;
     align-items: center;
@@ -33,7 +32,8 @@
 .HeroNavList {
     display: flex;
     flex-flow: row wrap;
-    gap: 10px;
+    gap: 14px;
+    max-width: 350px;
 }
 
 @media (min-width: 700px) {

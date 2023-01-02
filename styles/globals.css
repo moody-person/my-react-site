@@ -82,7 +82,7 @@ a {
 }
 
 img {
-  aspect-ratio: attr(width) / attr(height);
+  aspect-ratio: auto attr(width) / attr(height);
 }
 
 pre,

@@ -16,6 +16,13 @@
     gap: 4px;
 }
 
-.AboutLayoutDevices {
-    
+.AboutLayoutLinkListItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.AboutLayoutDeviceList {
+    gap: 20px;
+    display: flex;
 }

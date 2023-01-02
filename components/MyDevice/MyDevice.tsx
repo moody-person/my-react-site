@@ -17,7 +17,7 @@ export const MyDevice: FC<MyDeviceProps> = ({ device }) => {
                 <p className={style.MyDeviceName}>{device.name}</p>
             </div>
 			<div className={style.MyDeviceImage}>
-				<MyImage src={device.image} />
+				<MyImage src={device.image} width={200} height={200} />
 			</div>
 		</div>
 	);

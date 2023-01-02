@@ -11,13 +11,13 @@ type EducationProps = {
 
 export const EducationComponent: FC<EducationProps> = ({ education }) => {
     return (
-        <li>
+        <div>
             <h3 className={education.class}>
                 {i18n.t(education.universityLang)}
             </h3>
             <CVDate start={education.start} end={education.end} />
             <p>{i18n.t(education.programLang)}</p>
             <p>{i18n.t(education.facultyLang)}</p>
-        </li>
+        </div>
     );
 };

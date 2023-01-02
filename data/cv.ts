@@ -1,5 +1,3 @@
-// write cv generator
-
 import { UserLink } from "./about";
 
 export const cvI18N = {
@@ -52,8 +50,10 @@ export type Contact = UserLink;
 
 export type Tech = {
     name: string;
-    classList: string;
+    classList?: string;
     desc?: string;
+    color?: string;
+    bgColor?: string;
 }
 
 export type Skill = {
@@ -67,6 +67,7 @@ export type Job = {
     class: string;
     start: Date,
     end?: Date,
+    color?: string;
     description: Array<Record<string, string>>;
 }
 
@@ -95,6 +96,7 @@ export type CV = {
 export const cvData: CV = {
     nameLang: 'cv.name',
     professionLang: 'cv.profession',
+    // move data from "about" dataset
     contacts: [
         {
             icon: 'brand-telegram',
@@ -107,6 +109,11 @@ export const cvData: CV = {
             text: 'asleeppiano@outlook.com',
         },
         {
+            icon: 'vk',
+            url: 'https://vk.com/andrey.parfenov',
+            text: 'vk.com/andrey.parfenov',
+        },
+        {
             url: 'andreyparfenov.com',
             text: 'website',
         },
@@ -115,20 +122,22 @@ export const cvData: CV = {
         {
             sectionLang: 'cv.programmingLanguages',
             tech: [
-                { name: 'php', classList: 'c-lang--php' },
-                { name: 'javascript', classList: 'c-lang--js' },
-                { name: 'typescript', classList: 'c-lang--ts' },
-                { name: 'html', classList: 'c-lang--html' },
-                { name: 'css', classList: 'c-lang--css' },
+                { name: 'php', color: 'white', bgColor: '#8892BF', classList: 'c-lang--php' },
+                { name: 'javascript', color: 'black', bgColor: '#f7df1e', classList: 'c-lang--js' },
+                { name: 'typescript', color: 'white', bgColor: '#3178c6', classList: 'c-lang--ts' },
+                { name: 'html', color: 'white', bgColor: '#dd4a24', classList: 'c-lang--html' },
+                { name: 'css', color: 'white', bgColor: '#196fb4', classList: 'c-lang--css' },
             ],
         },
         {
             sectionLang: 'cv.frameworks',
             tech: [
-                { name: 'vue', classList: 'c-lang--vue' },
-                { name: 'svelte', classList: 'c-lang--svelte' },
+                { name: 'vue', color: 'white', bgColor: '#41b883', classList: 'c-lang--vue' },
+                { name: 'svelte', color: 'white', bgColor: '#f73c00', classList: 'c-lang--svelte' },
                 {
                     name: 'react',
+                    color: 'black',
+                    bgColor: '#61dafb',
                     classList: 'c-lang--react',
                     desc: 'cv.usingAtCurrentJob',
                 },
@@ -136,19 +145,21 @@ export const cvData: CV = {
         },
         {
             sectionLang: 'cv.restSection',
-            list: ['git, docker'],
+            list: ['git', 'docker'],
         },
     ],
     jobs: [
         {
             company: 'ВКонтакте',
             class: 'c-job--vk',
+            color: '#0077ff',
             start: new Date('2022-04-13'),
             description: [{ textLang: 'cv.jobVK.text' }, { textLang: 'cv.jobVK.text2' }],
         },
         {
             company: 'Кошелек',
             class: 'c-job--koshelek',
+            color: '#0251f8',
             start: new Date('2020-09-14'),
             end: new Date('2022-04-04'),
             description: [
@@ -161,6 +172,7 @@ export const cvData: CV = {
         {
             company: 'Розарио',
             class: 'c-job--rozario',
+            color: '#e71f75', 
             start: new Date('2019-11-01'),
             end: new Date('2020-07-01'),
             description: [
@@ -173,6 +185,7 @@ export const cvData: CV = {
         {
             company: 'Фриланс',
             class: 'c-job--freelance',
+            color: 'gray', 
             start: new Date('2019-06-01'),
             end: new Date('2019-11-01'),
             description: [
@@ -183,6 +196,7 @@ export const cvData: CV = {
         {
             company: 'Севентест',
             class: 'c-job--seventest',
+            color: '#ab250c', 
             start: new Date('2017-08-01'),
             end: new Date('2018-01-01'),
             description: [
